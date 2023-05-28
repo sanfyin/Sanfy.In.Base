@@ -6,8 +6,7 @@ on:
       - "v*"
 
 env:
-  PROJECT_PATH_CORE: "Sanfy.In.Base.Core/Sanfy.In.Base.Core.csproj"
-  PROJECT_PATH_APP: "Sanfy.In.Base.Application/Sanfy.In.Base.Application.csproj"
+  PROJECT_PATH: "Sanfy.In.Base.Core/Sanfy.In.Base.Core.csproj"
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
   NUGET_SOURCE_URL: "https://api.nuget.org/v3/index.json"
 
@@ -25,28 +24,18 @@ jobs:
           dotnet-version: "7.x"
           include-prerelease: true
 
-      - name: "Restore packages core"
-        run: dotnet restore ${{ env.PROJECT_PATH_CORE }}
+      - name: "Restore packages"
+        run: dotnet restore ${{ env.PROJECT_PATH }}
 
-      - name: "Build project core"
-        run: dotnet build ${{ env.PROJECT_PATH_CORE }} --no-restore --configuration Release
-
-      - name: "Restore packages application"
-        run: dotnet restore ${{ env.PROJECT_PATH_APP }}
-
-      - name: "Build project application"
-        run: dotnet build ${{ env.PROJECT_PATH_APP }} --no-restore --configuration Release
+      - name: "Build project"
+        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
 
       - name: "Get Version"
         id: version
         uses: battila7/get-version-action@v2
 
-      - name: "Pack project core"
-        run: dotnet pack ${{ env.PROJECT_PATH_CORE }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
-
-      - name: "Pack project application"
-        run: dotnet pack ${{ env.PROJECT_PATH_APP }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
-
+      - name: "Pack project"
+        run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
       - name: "Push package"
-        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }}
+        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }} --skip-duplicate

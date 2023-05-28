@@ -4,6 +4,14 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Sanfy.In.Base.Application</PackageId>
+    <Authors>Sanfyin</Authors>
+    <Description>Base Application project for Sanfyin API Projects</Description>
+    <PackageProjectUrl>https://github.com/sanfyin/Sanfy.In.Base</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sanfyin/Sanfy.In.Base</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
