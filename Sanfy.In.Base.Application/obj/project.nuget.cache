@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "PxzLs1x6J98iuAximNEw+K/SxmiYRiya5DU4A22boKhA1tv3zGNyKtp9VVzwMafMc6UDpiuG+ZQtcoIxrrc8eg==",
+  "success": true,
+  "projectFilePath": "/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Application/Sanfy.In.Base.Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/sanfyin/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
+    "/Users/sanfyin/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/sanfyin/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/sanfyin/.nuget/packages/sanfy.in.base.core/1.0.1/sanfy.in.base.core.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
