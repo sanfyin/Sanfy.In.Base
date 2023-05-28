@@ -4,6 +4,23 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Sanfy.In.Base.Core</PackageId>
+    <Authors>Sanfyin</Authors>
+    <Description>Base Domain Core for Sanfyin API Projects</Description>
+    <PackageProjectUrl>https://github.com/sanfyin/Sanfy.In.Base</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sanfyin/Sanfy.In.Base</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
 </Project>
