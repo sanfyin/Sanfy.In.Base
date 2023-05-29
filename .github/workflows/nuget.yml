@@ -6,7 +6,9 @@ on:
       - "v*"
 
 env:
-  PROJECT_PATH: "Sanfy.In.Base.Core/Sanfy.In.Base.Core.csproj"
+  PROJECT_PATH_CORE: "Sanfy.In.Base.Core/Sanfy.In.Base.Core.csproj"
+  PROJECT_PATH_APP: "Sanfy.In.Base.Application/Sanfy.In.Base.Application.csproj"
+  PROJECT_PATH_INFRA: "Sanfy.In.Base.Infra/Sanfy.In.Base.Infra.csproj"
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
   NUGET_SOURCE_URL: "https://api.nuget.org/v3/index.json"
 
@@ -24,18 +26,36 @@ jobs:
           dotnet-version: "7.x"
           include-prerelease: true
 
-      - name: "Restore packages"
-        run: dotnet restore ${{ env.PROJECT_PATH }}
+      - name: "Restore packages core"
+        run: dotnet restore ${{ env.PROJECT_PATH_CORE }}
 
-      - name: "Build project"
-        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+      - name: "Restore packages application"
+        run: dotnet restore ${{ env.PROJECT_PATH_APP }}
+
+      - name: "Restore packages infra"
+        run: dotnet restore ${{ env.PROJECT_PATH_INFRA }}
+
+      - name: "Build project core"
+        run: dotnet build ${{ env.PROJECT_PATH_CORE }} --no-restore --configuration Release
+
+      - name: "Build project application"
+        run: dotnet build ${{ env.PROJECT_PATH_APP }} --no-restore --configuration Release
+
+      - name: "Build project infra"
+        run: dotnet build ${{ env.PROJECT_PATH_INFRA }} --no-restore --configuration Release
 
       - name: "Get Version"
         id: version
         uses: battila7/get-version-action@v2
 
-      - name: "Pack project"
-        run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+      - name: "Pack project core"
+        run: dotnet pack ${{ env.PROJECT_PATH_CORE }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+
+      - name: "Pack project application"
+        run: dotnet pack ${{ env.PROJECT_PATH_APP }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+
+      - name: "Pack project infra"
+        run: dotnet pack ${{ env.PROJECT_PATH_INFRA }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
       - name: "Push package"
         run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }} --skip-duplicate
