@@ -1,0 +1,12 @@
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.csproj.AssemblyReference.cache
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.AssemblyInfoInputs.cache
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.AssemblyInfo.cs
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.csproj.CoreCompileInputs.cache
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/bin/Debug/net7.0/Sanfy.In.Base.Infra.deps.json
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/bin/Debug/net7.0/Sanfy.In.Base.Infra.dll
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/bin/Debug/net7.0/Sanfy.In.Base.Infra.pdb
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.dll
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/refint/Sanfy.In.Base.Infra.dll
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/Sanfy.In.Base.Infra.pdb
+/Users/sanfyin/Documents/Projects/Sanfyin/API/Sanfy.In.Base/Sanfy.In.Base.Infra/obj/Debug/net7.0/ref/Sanfy.In.Base.Infra.dll
