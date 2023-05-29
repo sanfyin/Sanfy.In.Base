@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Sanfy.In.Base.Infra</PackageId>
+    <Authors>Sanfyin</Authors>
+    <Description>Base Infrastructure project for Sanfyin API Projects</Description>
+    <PackageProjectUrl>https://github.com/sanfyin/Sanfy.In.Base</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sanfyin/Sanfy.In.Base</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Email\" />
+    <None Remove="Inbox\" />
+    <None Remove="InternalCommands\" />
+    <None Remove="Serialization\" />
+    <None Remove="DomainEventsDispatching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Email\" />
+    <Folder Include="Inbox\" />
+    <Folder Include="InternalCommands\" />
+    <Folder Include="Serialization\" />
+    <Folder Include="DomainEventsDispatching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Sanfy.In.Base.Application" Version="1.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Sanfy.In.Base.Core" Version="1.0.2" />
+    <PackageReference Include="Autofac" Version="7.0.1" />
+  </ItemGroup>
+</Project>
